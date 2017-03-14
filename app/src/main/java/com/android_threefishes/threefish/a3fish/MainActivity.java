@@ -21,7 +21,11 @@ public class MainActivity extends AppCompatActivity {
 
     private TabLayout tabLayout;
     private ViewPager viewPager;
+    private Home_ViewpagerAdapter mViewPagerAdapter;
     private List<Fragment> fragmentList;
+    private boolean[] fragmentFlagArray = new boolean[]{false,false,false,false,false,false};;
+    private Find_Fragment findFragment;
+    private NavigFragment navFragment;
     private TabLayout.Tab myTab;
     private Toolbar mbar;
     private TextView textView;
@@ -41,8 +45,8 @@ public class MainActivity extends AppCompatActivity {
     private void initView(){
         tabLayout = (TabLayout) findViewById(R.id.tablayout);
         viewPager = (ViewPager)findViewById(R.id.viewpager);
-        viewPager.setAdapter(new Home_ViewpagerAdapter
-                (getFragmentManager(),initFragmentlist()));
+        mViewPagerAdapter = new Home_ViewpagerAdapter(getFragmentManager(), initFragment(),fragmentFlagArray,functionKeysName());
+        viewPager.setAdapter(mViewPagerAdapter);
         tabLayout.setupWithViewPager(viewPager);
         initTabLayout(functionKeysName(), Default_functionKeysIcon(),Selected_functionKeysIcon());
 
@@ -81,10 +85,26 @@ public class MainActivity extends AppCompatActivity {
                 switch (iconStates){
                     case 1:
                         materialMenuDrawable.animateIconState(MaterialMenuDrawable.IconState.BURGER);
+
+                        fragmentFlagArray[0] = true;
+                        fragmentList.set(0, findFragment);
+                        mViewPagerAdapter.notifyDataSetChanged();
+
+                        //为解决更换NavigFragment后出现的tab的icon和title消失问题,迫不得已使用的方法:再次初始化tablayout
+                        initTabLayout(functionKeysName(), Default_functionKeysIcon(),Selected_functionKeysIcon());
+
                         iconStates = 0;
                         break;
                     case 0:
                         materialMenuDrawable.animateIconState(MaterialMenuDrawable.IconState.ARROW);
+
+                        fragmentFlagArray[0] = true;
+                        fragmentList.set(0, navFragment);
+                        mViewPagerAdapter.notifyDataSetChanged();
+
+                        //为解决更换NavigFragment后出现的tab的icon和title消失问题,迫不得已使用的方法:再次初始化tablayout
+                        initTabLayout(functionKeysName(), Default_functionKeysIcon(),Selected_functionKeysIcon());
+
                         iconStates = 1;
                         break;
                 }
@@ -103,10 +123,12 @@ public class MainActivity extends AppCompatActivity {
      */
     public void initTabLayout(String[] nameArray,final int[] D_iconArray,final int C_iconArray[]){
 
+        int[] defaArray = new int[]{R.drawable.find_origen_24dp, R.drawable.select_black, R.drawable.my_black};
+
         for (int i = 0;i < nameArray.length;i++){
             myTab = tabLayout.newTab();
             myTab = tabLayout.getTabAt(i);
-            myTab.setText(nameArray[i]).setIcon(D_iconArray[i]);
+            myTab.setText(nameArray[i]).setIcon(defaArray[i]);
         }
 
         //创建tab对象,并需要为每个tab指定specified index, 点击时通过tablayout.getPosition获取位置,
@@ -131,9 +153,11 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
-    private List<Fragment> initFragmentlist(){
+    private List<Fragment> initFragment(){
         fragmentList = new ArrayList<Fragment>();
-        fragmentList.add(new Find_Fragment());
+        findFragment = new Find_Fragment();
+        navFragment = new NavigFragment();
+        fragmentList.add(findFragment);
         fragmentList.add(new Selection_Fragment());
         fragmentList.add(new My_Fragment());
         return fragmentList;
@@ -150,7 +174,11 @@ public class MainActivity extends AppCompatActivity {
      * @return 底部导航默认icon数组
      */
     private int[] Default_functionKeysIcon(){
-        return new int[]{R.drawable.find_black_24dp, R.drawable.select_black,R.drawable.my_black};
+        return new int[]{
+                R.drawable.find_black_24dp,
+                R.drawable.select_black,
+                R.drawable.my_black
+        };
     }
 
     /**
