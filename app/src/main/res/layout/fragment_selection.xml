@@ -4,10 +4,22 @@
     android:layout_height="match_parent"
     tools:context="com.android_threefishes.threefish.a3fish.Selection_Fragment">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/toolbar_Select"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="hello_3_fragment" />
+        android:layout_height="wrap_content"
+        android:background="@color/colorState">
+
+        <TextView
+            android:id="@+id/title_tet"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center_horizontal"
+            android:maxLines="1"
+            android:textColor="@android:color/black"
+            android:textSize="20sp"
+            android:text="精选"/>
+
+    </android.support.v7.widget.Toolbar>
 
 </FrameLayout>

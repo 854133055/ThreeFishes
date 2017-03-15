@@ -5,9 +5,22 @@
     tools:context="com.android_threefishes.threefish.a3fish.My_Fragment">
 
     <!-- TODO: Update blank fragment layout -->
-    <TextView
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/toolbar_my"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="hello_2_fragment" />
+        android:layout_height="wrap_content"
+        android:background="@color/colorState">
+
+        <TextView
+            android:id="@+id/title_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center_horizontal"
+            android:maxLines="1"
+            android:textColor="@android:color/black"
+            android:textSize="20sp"
+            android:text="我的"/>
+
+    </android.support.v7.widget.Toolbar>
 
 </FrameLayout>

@@ -2,29 +2,53 @@ package com.android_threefishes.threefish.a3fish;
 
 
 import android.app.Fragment;
+import android.graphics.Color;
 import android.os.Bundle;
-
+import android.support.v7.widget.Toolbar;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import com.balysv.materialmenu.MaterialMenuDrawable;
+
 
 /**
- * A simple {@link Fragment} subclass.
+ *
  */
 public class Find_Fragment extends Fragment {
 
+    private MaterialMenuDrawable materialMenuDrawable;
 
-    public Find_Fragment() {
-        // Required empty public constructor
+    @Override
+    public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
+
+        View view = inflater.inflate(R.layout.fragment_find, container, false);
+        Toolbar toolbar= (Toolbar) view.findViewById(R.id.toolbar_find);
+        materialMenuDrawable = new MaterialMenuDrawable(getActivity(), Color.BLACK, MaterialMenuDrawable.Stroke.THIN);
+        materialMenuDrawable.setIconState(MaterialMenuDrawable.IconState.BURGER);
+        toolbar.setNavigationIcon(materialMenuDrawable);
+        toolbar.setNavigationOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                materialMenuDrawable.animateIconState(MaterialMenuDrawable.IconState.ARROW);
+                callback.findFraOnclick(1);
+            }
+        });
+        return view;
     }
 
 
-    @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container,
-                             Bundle savedInstanceState) {
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_find, container, false);
+    /**
+     * 回调函数 Fragment和MainAcitvity之间
+     */
+    interface Callback_Find{
+        void findFraOnclick(int num);
+    }
+
+    Callback_Find callback;
+
+    public void setCallback_find(Callback_Find callbackfind){
+        this.callback = callbackfind;
     }
 
 }
