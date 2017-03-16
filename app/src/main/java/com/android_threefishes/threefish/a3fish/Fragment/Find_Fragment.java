@@ -1,4 +1,4 @@
-package com.android_threefishes.threefish.a3fish;
+package com.android_threefishes.threefish.a3fish.Fragment;
 
 
 import android.app.Fragment;
@@ -9,6 +9,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import com.android_threefishes.threefish.a3fish.R;
 import com.balysv.materialmenu.MaterialMenuDrawable;
 
 
@@ -41,7 +42,7 @@ public class Find_Fragment extends Fragment {
     /**
      * 回调函数 Fragment和MainAcitvity之间
      */
-    interface Callback_Find{
+    public interface Callback_Find{
         void findFraOnclick(int num);
     }
 

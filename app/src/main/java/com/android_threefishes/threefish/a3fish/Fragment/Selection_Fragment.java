@@ -1,4 +1,4 @@
-package com.android_threefishes.threefish.a3fish;
+package com.android_threefishes.threefish.a3fish.Fragment;
 
 import android.app.Fragment;
 import android.os.Bundle;
@@ -7,6 +7,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import com.android_threefishes.threefish.a3fish.R;
 
 
 public class Selection_Fragment extends Fragment {

@@ -6,6 +6,12 @@ import android.support.design.widget.TabLayout;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
 
+import com.android_threefishes.threefish.a3fish.Adapter.Home_ViewpagerAdapter;
+import com.android_threefishes.threefish.a3fish.Fragment.Find_Fragment;
+import com.android_threefishes.threefish.a3fish.Fragment.My_Fragment;
+import com.android_threefishes.threefish.a3fish.Fragment.NavigFragment;
+import com.android_threefishes.threefish.a3fish.Fragment.Selection_Fragment;
+
 import java.util.ArrayList;
 import java.util.List;
 

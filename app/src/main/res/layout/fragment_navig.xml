@@ -2,51 +2,73 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.android_threefishes.threefish.a3fish.NavigFragment">
+    tools:context="com.android_threefishes.threefish.a3fish.Fragment.NavigFragment">
 
-
-
-        <android.support.v7.widget.Toolbar
-            android:id="@+id/toolbar_navig"
+        <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:background="@color/colorState">
+            android:layout_height="match_parent"
+            android:orientation="vertical">
 
+                <android.support.v7.widget.Toolbar
+                    android:id="@+id/toolbar_navig"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@color/colorState">
 
-                <HorizontalScrollView
-                    android:layout_width="wrap_content"
-                    android:layout_height="match_parent"
-                    android:layout_gravity="center">
-
-                        <LinearLayout
+                        <HorizontalScrollView
                             android:layout_width="wrap_content"
                             android:layout_height="match_parent"
-                            >
+                            android:layout_gravity="center">
 
-                                <ImageView
-                                    android:id="@+id/iv_title_gank"
-                                    android:layout_width="55dp"
-                                    android:layout_height="wrap_content"
-                                    android:layout_gravity="center"
-                                    android:src="@drawable/find_black_24dp" />
+                                <LinearLayout
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="match_parent">
 
-                                <ImageView
-                                    android:id="@+id/iv_title_one"
-                                    android:layout_width="55dp"
-                                    android:layout_height="wrap_content"
-                                    android:src="@drawable/find_black_24dp" />
+                                        <TextView
+                                            android:id="@+id/tv_listen"
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:textSize="25sp"
+                                            android:text="听"
+                                            android:paddingLeft="10dp"
+                                            android:paddingRight="10dp"
+                                            android:layout_gravity="center"
+                                            android:onClick="toolbarTvOnclick" />
 
-                                <ImageView
-                                    android:id="@+id/iv_title_dou"
-                                    android:layout_width="55dp"
-                                    android:layout_height="wrap_content"
-                                    android:src="@drawable/find_black_24dp" />
+                                        <TextView
+                                            android:id="@+id/tv_play"
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:textSize="25sp"
+                                            android:text="玩"
+                                            android:paddingLeft="10dp"
+                                            android:paddingRight="10dp"
+                                            android:onClick="toolbarTvOnclick" />
 
-                        </LinearLayout>
+                                        <TextView
+                                            android:id="@+id/tv_eat"
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:textSize="25sp"
+                                            android:text="吃"
+                                            android:paddingLeft="10dp"
+                                            android:paddingRight="10dp"
+                                            android:onClick="toolbarTvOnclick" />
 
-                </HorizontalScrollView>
+                                </LinearLayout>
 
-        </android.support.v7.widget.Toolbar>
+                        </HorizontalScrollView>
+
+                </android.support.v7.widget.Toolbar>
+                <android.support.v4.view.ViewPager
+                    android:id="@+id/navigViewpager"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                </android.support.v4.view.ViewPager>
+
+        </LinearLayout>
+
 
 
 </FrameLayout>

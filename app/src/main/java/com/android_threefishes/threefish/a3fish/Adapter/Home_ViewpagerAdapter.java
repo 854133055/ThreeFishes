@@ -1,4 +1,4 @@
-package com.android_threefishes.threefish.a3fish;
+package com.android_threefishes.threefish.a3fish.Adapter;
 
 import android.app.Fragment;
 import android.app.FragmentManager;
