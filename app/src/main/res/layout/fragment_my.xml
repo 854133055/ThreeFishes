@@ -4,23 +4,22 @@
     android:layout_height="match_parent"
     tools:context="com.android_threefishes.threefish.a3fish.Fragment.My_Fragment">
 
-    <!-- TODO: Update blank fragment layout -->
-    <android.support.v7.widget.Toolbar
-        android:id="@+id/toolbar_my"
+    <LinearLayout
+        android:orientation="vertical"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:background="@color/colorState">
+        android:layout_height="match_parent">
 
-        <TextView
-            android:id="@+id/title_text"
-            android:layout_width="wrap_content"
+        <!--<android.support.v7.widget.Toolbar
+            android:id="@+id/toolbar_my"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:gravity="center_horizontal"
-            android:maxLines="1"
-            android:textColor="@android:color/black"
-            android:textSize="20sp"
-            android:text="我的"/>
+            android:background="@color/colorState">
 
-    </android.support.v7.widget.Toolbar>
+        </android.support.v7.widget.Toolbar>-->
+
+        <include layout="@layout/my_part01"/>
+
+        <include layout="@layout/my_part02"/>
+    </LinearLayout>
 
 </FrameLayout>

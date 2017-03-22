@@ -5,6 +5,9 @@ import android.os.Bundle;
 import android.support.design.widget.TabLayout;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
+import android.util.Log;
+import android.view.View;
+import android.widget.ImageView;
 
 import com.android_threefishes.threefish.a3fish.Adapter.Home_ViewpagerAdapter;
 import com.android_threefishes.threefish.a3fish.Fragment.Find_Fragment;
@@ -50,7 +53,7 @@ public class MainActivity extends AppCompatActivity {
     private void initView(){
         tabLayout = (TabLayout) findViewById(R.id.tablayout);
         viewPager = (ViewPager)findViewById(R.id.viewpager);
-        mViewPagerAdapter = new Home_ViewpagerAdapter(getFragmentManager(), initFragment(),fragmentFlagArray,functionKeysName());
+        mViewPagerAdapter = new Home_ViewpagerAdapter(this,getFragmentManager(), initFragment(),fragmentFlagArray,functionKeysName(),Default_functionKeysIcon());
         viewPager.setAdapter(mViewPagerAdapter);
         tabLayout.setupWithViewPager(viewPager);
         initTabLayout(functionKeysName(), Default_functionKeysIcon(),Selected_functionKeysIcon());
@@ -88,26 +91,62 @@ public class MainActivity extends AppCompatActivity {
      */
     public void initTabLayout(String[] nameArray,final int[] D_iconArray,final int C_iconArray[]){
 
-        int[] defaArray = new int[]{R.drawable.find_origen_24dp, R.drawable.select_black, R.drawable.my_black};
-
-        for (int i = 0;i < nameArray.length;i++){
-            myTab = tabLayout.newTab();
-            myTab = tabLayout.getTabAt(i);
-            myTab.setText(nameArray[i]).setIcon(defaArray[i]);
+        for (int i = 0;i < tabLayout.getTabCount();i++){
+            if(tabLayout.getTabCount() != 0){
+                myTab = tabLayout.getTabAt(i);
+                myTab.setIcon(D_iconArray[i]).setText(nameArray[i]);
+                myTab.setCustomView(mViewPagerAdapter.getTabView(i));
+            }
         }
 
-        //创建tab对象,并需要为每个tab指定specified index, 点击时通过tablayout.getPosition获取位置,
-        //存疑:getPosition取得的值是否为specified index??
+
         tabLayout.setOnTabSelectedListener(new TabLayout.OnTabSelectedListener() {
+
             @Override
             public void onTabSelected(TabLayout.Tab tab) {
-                tabLayout.getTabAt(tab.getPosition()).setIcon(C_iconArray[tab.getPosition()]);
+                Log.e("here", "case0"+tab.getPosition()+"");
+                setTabSelected(tab, tab.getPosition());
                 viewPager.setCurrentItem(tab.getPosition());
+
+            }
+
+            public void setTabSelected(TabLayout.Tab tab,int num){
+                View view = tab.getCustomView();
+                ImageView iv = (ImageView) view.findViewById(R.id.tabImage);
+                switch (num){
+                    case 0:
+                        iv.setImageResource(R.drawable.ic_findpressed);
+                        break;
+                    case 1:
+                        iv.setImageResource(R.drawable.ic_selected_pressed);
+                        break;
+                    case 2:
+                        iv.setImageResource(R.drawable.ic_my_pressed);
+                        break;
+                }
+
+            }
+
+            public void setUnTabSelected(TabLayout.Tab tab,int num){
+                View view = tab.getCustomView();
+                ImageView iv = (ImageView) view.findViewById(R.id.tabImage);
+                switch (num){
+                    case 0:
+                        iv.setImageResource(R.drawable.ic_find);
+                        break;
+                    case 1:
+                        iv.setImageResource(R.drawable.ic_selected);
+                        break;
+                    case 2:
+                        iv.setImageResource(R.drawable.ic_my);
+                        break;
+                }
+
             }
 
             @Override
             public void onTabUnselected(TabLayout.Tab tab) {
-                tabLayout.getTabAt(tab.getPosition()).setIcon(D_iconArray[tab.getPosition()]);
+                setUnTabSelected(tab, tab.getPosition());
             }
 
             @Override
@@ -115,8 +154,16 @@ public class MainActivity extends AppCompatActivity {
 
             }
         });
-
     }
+
+    /*private void resetTab(){
+        Log.e("here", "reset it");
+        tabLayout.getTabAt(0).setIcon(R.drawable.ic_find);
+        tabLayout.getTabAt(1).setIcon(R.drawable.ic_selected);
+        tabLayout.getTabAt(2).setIcon(R.drawable.ic_my);
+    }*/
+
+
 
     private List<Fragment> initFragment(){
         fragmentList = new ArrayList<Fragment>();
@@ -140,9 +187,9 @@ public class MainActivity extends AppCompatActivity {
      */
     private int[] Default_functionKeysIcon(){
         return new int[]{
-                R.drawable.find_black_24dp,
-                R.drawable.select_black,
-                R.drawable.my_black
+                R.drawable.ic_findpressed,
+                R.drawable.ic_selected,
+                R.drawable.ic_my
         };
     }
 
@@ -150,7 +197,10 @@ public class MainActivity extends AppCompatActivity {
      * @return 底部导航被选中icon数组
      */
     private int[] Selected_functionKeysIcon(){
-        return new int[]{R.drawable.find_origen_24dp, R.drawable.select_orig,R.drawable.my_orig};
+        return new int[]{
+                R.drawable.ic_find,
+                R.drawable.ic_selected_pressed,
+                R.drawable.ic_my_pressed};
     }
 
 }

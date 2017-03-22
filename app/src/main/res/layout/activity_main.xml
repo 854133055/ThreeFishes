@@ -17,10 +17,17 @@
         android:scrollbars="none"
         android:layout_weight="1"/>
 
+    <View
+        android:background="@color/colorState"
+        android:layout_width="match_parent"
+        android:layout_height="0.5dp" />
+
     <android.support.design.widget.TabLayout
         android:id="@+id/tablayout"
         android:layout_width="match_parent"
-        android:layout_height="50dp"
+        android:layout_height="52.97dp"
+        android:background="@color/white"
+        style="@style/MyTabLayoutStyle"
         app:tabMode="fixed"
         app:tabGravity="fill"
         app:tabIndicatorHeight="0dp"
