@@ -8,6 +8,7 @@ package com.android_threefishes.threefish.a3fish.Entity;
 public class UsrInfEntity {
 
     private byte[] usrImg;
+    private int usrImgPath;
     private String name;
     private String introduct;
     private int publishNum;

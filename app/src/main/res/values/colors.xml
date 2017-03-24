@@ -7,5 +7,7 @@
     <color name="colorState">#c5d3de</color>
     <color name="white">#ffffff</color>
     <color name="black2">#f2f2f2</color>
-
+    <color name="textBackColor01">#8EE5EE</color>
+    <color name="textBackColor02">#54FF9F</color>
+    <color name="textBackColor03">#d6adf0</color>
 </resources>

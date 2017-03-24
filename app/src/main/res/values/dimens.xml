@@ -6,4 +6,5 @@
     <dimen name="my_listItemHeight">48.25dp</dimen>
     <dimen name="usrHeadImage">72.56dp</dimen>
     <dimen name="usrHeImageMarRightTop">14.512dp</dimen>
+    <dimen name="cardItem_context_textsize">10sp</dimen>
 </resources>
