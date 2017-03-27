@@ -34,45 +34,24 @@
 
         <TextView
             android:id="@+id/tv_listen"
-            android:layout_width="wrap_content"
-            android:layout_height="30.11dp"
-            android:textSize="12sp"
-            android:layout_marginTop="25.4dp"
-            android:layout_marginLeft="51dp"
-            android:textColor="#666666"
+            style="@style/drawerTextView"
             android:text="聆听"
-            android:gravity="center_vertical"
             />
 
         <TextView
             android:id="@+id/tv_artical"
-            android:layout_width="wrap_content"
-            android:layout_height="38.82dp"
-            android:textSize="16sp"
-            android:layout_marginLeft="51dp"
-            android:textColor="#333333"
-            android:text="文摘"
-            android:gravity="center_vertical"
-            />
+            style="@style/drawerSuperTextView"
+            android:text="文摘" />
+
         <TextView
             android:id="@+id/tv_song"
-            android:layout_width="wrap_content"
-            android:layout_height="38.82dp"
-            android:textSize="16sp"
-            android:layout_marginLeft="51dp"
-            android:textColor="#333333"
-            android:text="诗歌"
-            android:gravity="center_vertical"
-            />
+            style="@style/drawerSuperTextView"
+            android:text="诗歌" />
+
         <TextView
             android:id="@+id/tv_origin"
-            android:layout_width="wrap_content"
-            android:layout_height="38.82dp"
-            android:textSize="16sp"
-            android:layout_marginLeft="51dp"
-            android:textColor="#333333"
+            style="@style/drawerSuperTextView"
             android:text="原创"
-            android:gravity="center_vertical"
             />
 
         <View
@@ -86,36 +65,20 @@
 
         <TextView
             android:id="@+id/tv_food"
-            android:layout_width="wrap_content"
-            android:layout_height="30.11dp"
-            android:textSize="12sp"
-            android:layout_marginTop="25.4dp"
-            android:layout_marginLeft="51dp"
-            android:textColor="#666666"
+            style="@style/drawerTextView"
             android:text="美食"
-            android:gravity="center_vertical"
             />
 
         <TextView
             android:id="@+id/tv_newC"
-            android:layout_width="wrap_content"
-            android:layout_height="38.82dp"
-            android:textSize="16sp"
-            android:layout_marginLeft="51dp"
-            android:textColor="#333333"
+            style="@style/drawerSuperTextView"
             android:text="新潮"
-            android:gravity="center_vertical"
             />
 
         <TextView
             android:id="@+id/tv_tradition"
-            android:layout_width="wrap_content"
-            android:layout_height="38.82dp"
-            android:textSize="16sp"
-            android:layout_marginLeft="51dp"
-            android:textColor="#333333"
+            style="@style/drawerSuperTextView"
             android:text="传统"
-            android:gravity="center_vertical"
             />
         <View
             android:background="@color/colorState"
@@ -127,39 +90,20 @@
 
         <TextView
             android:id="@+id/tv_trip"
-            android:layout_width="wrap_content"
-            android:layout_height="30.11dp"
-            android:textSize="12sp"
-            android:layout_marginTop="25.4dp"
-            android:layout_marginLeft="51dp"
-            android:textColor="#666666"
+            style="@style/drawerTextView"
             android:text="旅行"
-            android:gravity="center_vertical"
+
             />
 
         <TextView
             android:id="@+id/tv_time"
-            android:layout_width="wrap_content"
-            android:layout_height="38.82dp"
-            android:textSize="16sp"
-            android:layout_marginLeft="51dp"
-            android:textColor="#333333"
-            android:text="时间"
-            android:gravity="center_vertical"
-            />
+            style="@style/drawerSuperTextView"
+            android:text="时间" />
 
         <TextView
             android:id="@+id/tv_space"
-            android:layout_width="wrap_content"
-            android:layout_height="38.82dp"
-            android:textSize="16sp"
-            android:layout_marginLeft="51dp"
-            android:textColor="#333333"
-            android:text="空间"
-            android:gravity="center_vertical"
-            />
-
-
+            style="@style/drawerSuperTextView"
+            android:text="空间" />
 
     </LinearLayout>
 

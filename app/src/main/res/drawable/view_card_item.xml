@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v7.widget.CardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/selected_cardView"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    app:cardCornerRadius="8dp"
+    app:cardElevation="6dp"
+    app:cardMaxElevation="12dp"
+    app:cardUseCompatPadding="true">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+
+        <ImageView
+            android:id="@+id/imageView"
+            android:layout_width="match_parent"
+            android:layout_height="400dp"
+            android:scaleType="centerCrop"
+            android:src="@drawable/fishpicture"/>
+
+        <TextView
+            android:id="@+id/selected_tv_content"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingTop="16.32dp"
+            android:paddingLeft="18.14dp"
+            android:paddingRight="18.14dp"
+            android:paddingBottom="9.07dp"
+            android:textSize="13.7sp"
+            android:textColor="#333333"
+            android:text="当提起小竹桶时,清澈的水撒向远方,撒出记忆的藏宝图,我站在板凳上,看时针指引的正确方向,踏着水流向前方探险"/>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+
+            <TextView
+                android:id="@+id/selected_tv_flags"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingLeft="18.14dp"
+                android:textColor="#999999"
+                android:textSize="13.7sp"
+                android:text="#  听书  文学  青年文学  校园"/>
+
+            <ImageView
+                android:layout_width="22dp"
+                android:layout_height="27dp"
+                android:layout_alignParentRight="true"
+                android:layout_marginRight="14.5dp"
+                android:src="@drawable/heardbig"
+                android:id="@+id/selected_iv_heartbig" />
+
+
+        </RelativeLayout>
+
+    </LinearLayout>
+
+
+</android.support.v7.widget.CardView>

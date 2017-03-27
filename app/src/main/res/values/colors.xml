@@ -12,4 +12,6 @@
     <color name="textBackColor03">#d6adf0</color>
     <color name="myBlue">#ff4343</color>
     <color name="myRed">#00aaff</color>
+    <color name="my333333">#333333</color>
+    <color name="my666666">#666666</color>
 </resources>

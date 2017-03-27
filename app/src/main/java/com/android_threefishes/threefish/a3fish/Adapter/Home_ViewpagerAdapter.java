@@ -32,7 +32,6 @@ public class Home_ViewpagerAdapter extends FragmentPagerAdapter {
 
     public Home_ViewpagerAdapter(Context context,FragmentManager fm, List<Fragment> fragmentList, String[] nameArray,int[] iconArray) {
         super(fm);
-
         this.fragmentList = fragmentList;
         this.fm = fm;
        // this.tagArray = mtagArray;

@@ -5,5 +5,12 @@
     tools:context="com.android_threefishes.threefish.a3fish.Fragment.Selection_Fragment">
 
 
+    <com.view.jameson.library.SpeedRecyclerView
+        android:id="@+id/recyclerView_selected"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+      android:layout_marginBottom="35dp">
+
+    </com.view.jameson.library.SpeedRecyclerView>
 
 </FrameLayout>

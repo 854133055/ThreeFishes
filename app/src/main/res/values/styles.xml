@@ -46,4 +46,24 @@
         <item name="android:contentDescription">@string/app_name</item>
     </style>
 
+    <style name="drawerSuperTextView">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">38.82dp</item>
+        <item name="android:layout_marginLeft">79.81dp</item>
+        <item name="android:textColor">@color/my333333</item>
+        <item name="android:gravity">center_vertical</item>
+        <item name="android:textSize">16sp</item>
+    </style>
+
+    <style name="drawerTextView">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">30.11dp</item>
+        <item name="android:layout_marginLeft">79.81dp</item>
+        <item name="android:layout_marginTop">25.4dp</item>
+        <item name="android:textColor">@color/my666666</item>
+        <item name="android:gravity">center_vertical</item>
+        <item name="android:textSize">12sp</item>
+    </style>
+
+
 </resources>

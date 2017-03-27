@@ -1,4 +1,4 @@
-# ThreeFishes 3.24
+# ThreeFishes 3.27
 
-![3.24.gif](http://upload-images.jianshu.io/upload_images/2158529-33d14303651ed21d.gif?imageMogr2/auto-orient/strip)
+![3.27.gif](http://upload-images.jianshu.io/upload_images/2158529-0171fc6133ccea47.gif?imageMogr2/auto-orient/strip)
 
