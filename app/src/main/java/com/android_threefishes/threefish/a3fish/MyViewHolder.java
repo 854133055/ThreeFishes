@@ -18,14 +18,26 @@ public class MyViewHolder extends RecyclerView.ViewHolder {
     private ImageView iv_fishes;
     private TextView tv_number;
     private CardView cardView;
+    private TextView tv_comments;
+    private ImageView iv_commentImg;
 
     public MyViewHolder(View itemView) {
         super(itemView);
         iv_background = (ImageView) itemView.findViewById(R.id.iv_background);
         tv_context = (TextView) itemView.findViewById(R.id.tv_context);
         iv_fishes = (ImageView) itemView.findViewById(R.id.iv_fishes);
-        tv_number = (TextView) itemView.findViewById(R.id.tv_num);
+        tv_number = (TextView) itemView.findViewById(R.id.tv_fishnum);
         cardView = (CardView) itemView.findViewById(R.id.cardview_item);
+        iv_commentImg = (ImageView) itemView.findViewById(R.id.iv_comments);
+        tv_comments = (TextView) itemView.findViewById(R.id.tv_commentNum);
+    }
+
+    public TextView getTv_comments() {
+        return tv_comments;
+    }
+
+    public ImageView getIv_commentImg() {
+        return iv_commentImg;
     }
 
     public ImageView getIv_background() {

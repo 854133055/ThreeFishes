@@ -1,36 +1,31 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:id="@+id/activity_main"
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:orientation="vertical"
-    tools:context="com.android_threefishes.threefish.a3fish.MainActivity">
+    android:layout_height="match_parent">
 
-
-
-    <android.support.v4.view.ViewPager
-        android:id="@+id/viewpager"
+    <android.support.v4.widget.DrawerLayout
+        android:id="@+id/drawer_layout"
         android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:scrollbars="none"
-        android:layout_weight="1"/>
+        android:layout_height="match_parent">
 
-    <View
-        android:background="@color/colorState"
-        android:layout_width="match_parent"
-        android:layout_height="0.5dp" />
 
-    <android.support.design.widget.TabLayout
-        android:id="@+id/tablayout"
-        android:layout_width="match_parent"
-        android:layout_height="52.97dp"
-        android:background="@color/white"
-        style="@style/MyTabLayoutStyle"
-        app:tabMode="fixed"
-        app:tabGravity="fill"
-        app:tabIndicatorHeight="0dp"
-        />
 
-</LinearLayout>
+        <include
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            layout="@layout/activity_main_connext" />
+
+
+        <include
+            android:layout_width="189dp"
+            android:layout_height="match_parent"
+            android:layout_gravity="start"
+            layout="@layout/activity_main_drawer" />
+
+
+    </android.support.v4.widget.DrawerLayout>
+
+
+</RelativeLayout>

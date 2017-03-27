@@ -10,4 +10,6 @@
     <color name="textBackColor01">#8EE5EE</color>
     <color name="textBackColor02">#54FF9F</color>
     <color name="textBackColor03">#d6adf0</color>
+    <color name="myBlue">#ff4343</color>
+    <color name="myRed">#00aaff</color>
 </resources>

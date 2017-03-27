@@ -2,12 +2,10 @@ package com.android_threefishes.threefish.a3fish.Adapter;
 
 import android.app.Fragment;
 import android.app.FragmentManager;
-import android.app.FragmentTransaction;
 import android.content.Context;
 import android.support.v13.app.FragmentPagerAdapter;
 import android.view.LayoutInflater;
 import android.view.View;
-import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -25,19 +23,19 @@ public class Home_ViewpagerAdapter extends FragmentPagerAdapter {
 
 
     private List<Fragment> fragmentList;
-    private boolean[] tagArray;
+  //  private boolean[] tagArray;
     private FragmentManager fm;
     private String[] mnameArray;
     private Context mContext;
     private int[] mIconArray;
 
 
-    public Home_ViewpagerAdapter(Context context,FragmentManager fm, List<Fragment> fragmentList, boolean[] mtagArray, String[] nameArray,int[] iconArray) {
+    public Home_ViewpagerAdapter(Context context,FragmentManager fm, List<Fragment> fragmentList, String[] nameArray,int[] iconArray) {
         super(fm);
 
         this.fragmentList = fragmentList;
         this.fm = fm;
-        this.tagArray = mtagArray;
+       // this.tagArray = mtagArray;
         this.mnameArray = nameArray;
         this.mContext = context;
         this.mIconArray = iconArray;
@@ -76,7 +74,7 @@ public class Home_ViewpagerAdapter extends FragmentPagerAdapter {
      * @param position
      * @return
      */
-    @Override
+   /* @Override
     public Object instantiateItem(ViewGroup container, int position) {
         Fragment fragment = (Fragment)super.instantiateItem(container, position);
         String mTag = fragment.getTag();
@@ -95,5 +93,5 @@ public class Home_ViewpagerAdapter extends FragmentPagerAdapter {
     @Override
     public int getItemPosition(Object object) {
         return POSITION_NONE;
-    }
+    }*/
 }

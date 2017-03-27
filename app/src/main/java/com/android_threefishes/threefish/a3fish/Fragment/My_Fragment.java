@@ -25,7 +25,6 @@ public class My_Fragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_my, container, false);
-       // Toolbar toolbar= (Toolbar) view.findViewById(R.id.toolbar_my);
         return view;
     }
 

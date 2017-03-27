@@ -1,11 +1,19 @@
 package com.android_threefishes.threefish.a3fish;
 
 import android.app.Fragment;
+import android.graphics.Color;
 import android.os.Bundle;
+import android.support.annotation.NonNull;
+import android.support.design.widget.NavigationView;
 import android.support.design.widget.TabLayout;
+import android.support.v4.view.GravityCompat;
 import android.support.v4.view.ViewPager;
+import android.support.v4.widget.DrawerLayout;
+import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.Toolbar;
 import android.util.Log;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.ImageView;
 
@@ -14,21 +22,21 @@ import com.android_threefishes.threefish.a3fish.Fragment.Find_Fragment;
 import com.android_threefishes.threefish.a3fish.Fragment.My_Fragment;
 import com.android_threefishes.threefish.a3fish.Fragment.NavigFragment;
 import com.android_threefishes.threefish.a3fish.Fragment.Selection_Fragment;
+import com.balysv.materialmenu.MaterialMenuDrawable;
 
 import java.util.ArrayList;
 import java.util.List;
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
 
     private TabLayout tabLayout;
     private ViewPager viewPager;
     private Home_ViewpagerAdapter mViewPagerAdapter;
     private List<Fragment> fragmentList;
-    private boolean[] fragmentFlagArray = new boolean[]{false,false,false,false,false,false};;
     private Find_Fragment findFragment;
     private NavigFragment navFragment;
     private TabLayout.Tab myTab;
-
+    private MaterialMenuDrawable materialMenuDrawable;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -36,7 +44,7 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         initView();
-        findFragment.setCallback_find(new Find_Fragment.Callback_Find() {
+       /* findFragment.setCallback_find(new Find_Fragment.Callback_Find() {
             @Override
             public void findFraOnclick(int num) {
                 fragmentCallback(num);
@@ -47,23 +55,43 @@ public class MainActivity extends AppCompatActivity {
             public void navigFraOnclick(int num) {
                 fragmentCallback(num);
             }
-        });
+        });*/
     }
 
     private void initView(){
+        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar_main);
+        setSupportActionBar(toolbar);
+        materialMenuDrawable = new MaterialMenuDrawable(this, Color.BLACK, MaterialMenuDrawable.Stroke.THIN);
+        materialMenuDrawable.setIconState(MaterialMenuDrawable.IconState.BURGER);
+
+        DrawerLayout drawerLayout = (DrawerLayout) findViewById(R.id.drawer_layout);
+        ActionBarDrawerToggle actionBarDrawerToggle = new ActionBarDrawerToggle(this, drawerLayout, toolbar, R.string.usrCommentNum, R.string.usrReportNum);
+        drawerLayout.setDrawerListener(actionBarDrawerToggle);
+        actionBarDrawerToggle.syncState();
+
         tabLayout = (TabLayout) findViewById(R.id.tablayout);
         viewPager = (ViewPager)findViewById(R.id.viewpager);
-        mViewPagerAdapter = new Home_ViewpagerAdapter(this,getFragmentManager(), initFragment(),fragmentFlagArray,functionKeysName(),Default_functionKeysIcon());
+        mViewPagerAdapter = new Home_ViewpagerAdapter(this,getFragmentManager(), initFragment(),functionKeysName(),Default_functionKeysIcon());
         viewPager.setAdapter(mViewPagerAdapter);
         tabLayout.setupWithViewPager(viewPager);
         initTabLayout(functionKeysName(), Default_functionKeysIcon(),Selected_functionKeysIcon());
 
     }
 
-    /**
+    @Override
+    public void onBackPressed() {
+        DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
+        if (drawer.isDrawerOpen(GravityCompat.START)) {
+            drawer.closeDrawer(GravityCompat.START);
+        } else {
+            super.onBackPressed();
+        }
+    }
+/*
+    *//**
      * find_fragment和navigFragment回调Activity,来通知viewpager更新fragment
      * @param num 特征值
-     */
+     *//*
     private void fragmentCallback(int num){
         switch (num) {
             case 0:
@@ -79,7 +107,7 @@ public class MainActivity extends AppCompatActivity {
                 initTabLayout(functionKeysName(), Default_functionKeysIcon(),Selected_functionKeysIcon());
                 break;
         }
-    }
+    }*/
 
 
 
@@ -156,12 +184,12 @@ public class MainActivity extends AppCompatActivity {
         });
     }
 
-    /*private void resetTab(){
+    private void resetTab(){
         Log.e("here", "reset it");
         tabLayout.getTabAt(0).setIcon(R.drawable.ic_find);
         tabLayout.getTabAt(1).setIcon(R.drawable.ic_selected);
         tabLayout.getTabAt(2).setIcon(R.drawable.ic_my);
-    }*/
+    }
 
 
 
@@ -203,4 +231,8 @@ public class MainActivity extends AppCompatActivity {
                 R.drawable.ic_my_pressed};
     }
 
+    @Override
+    public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+        return false;
+    }
 }

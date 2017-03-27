@@ -5,7 +5,6 @@ import android.support.v7.widget.RecyclerView;
 import android.text.Layout;
 import android.text.StaticLayout;
 import android.text.TextPaint;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -26,10 +25,15 @@ public class MyRecyAdaper extends RecyclerView.Adapter<MyViewHolder> {
     private List<CardInfEntity> cardInfEntityList;
     private Context mContext;
     private CardInfEntity cardInfEntity;
+    private int width;
+    private int imageHeigh;
+    private int cardViewHeigh;
 
     public MyRecyAdaper(List<CardInfEntity> cardInfEntityList, Context mContext) {
         this.cardInfEntityList = cardInfEntityList;
         this.mContext = mContext;
+        //获取屏幕宽度,并计算出每栏的宽度
+        this.width = Untils.getSrceenWidth(mContext) / 2 - 14;
     }
 
     @Override
@@ -42,26 +46,28 @@ public class MyRecyAdaper extends RecyclerView.Adapter<MyViewHolder> {
     @Override
     public void onBindViewHolder(MyViewHolder holder, int position) {
         cardInfEntity = cardInfEntityList.get(position);
-        int srceenWidth = Untils.getSrceenWidth(mContext);
-        int width = srceenWidth/2 - 14;
-        int imageHeigh = (int) (cardInfEntityList.get(position).getImageScale() * width +0.5f);
-        int allHeigh = imageHeigh + 3*getDeviceLineHeigh(holder,cardInfEntity.getContentText(),width) + getTextViewHeigh(holder, cardInfEntity.getContentText(), width);
-        Log.e("get date", "width: " + width + " imageHeigh: " + imageHeigh + " TextViewheigh: " + getTextViewHeigh(holder, cardInfEntityList.get(position).getContentText(),width) + " allHeigh: " + allHeigh);
-        Log.e("textviewline", getTextViewLines(holder, cardInfEntityList.get(position).getContentText(), width)+"");
+        imageHeigh = (int) (cardInfEntity.getImageScale() * width +0.5f);
+        cardViewHeigh = imageHeigh + 3*getDeviceLineHeigh(holder,cardInfEntity.getContentText(),width) + getTextViewHeigh(holder, cardInfEntity.getContentText(), width);
+
+        /*      Log.e("get date", "width: " + width + " imageHeigh: " + imageHeigh + " TextViewheigh: " + getTextViewHeigh(holder, cardInfEntityList.get(position).getContentText(),width) + " allHeigh: " + allHeigh);
+        Log.e("textviewline", getTextViewLines(holder, cardInfEntityList.get(position).getContentText(), width)+"");*/
+        //重新设置itemview的布局长宽
         ViewGroup.LayoutParams mLayoutParams = holder.itemView.getLayoutParams();
         mLayoutParams.width = width;
-        mLayoutParams.height = allHeigh;
+        mLayoutParams.height = cardViewHeigh;
 
 
         holder.itemView.setLayoutParams(mLayoutParams);
 
-        holder.getIv_background().setImageResource(cardInfEntityList.get(position).getUsrImgPath());
-        holder.getTv_context().setText(cardInfEntityList.get(position).getContentText());
-        holder.getIv_fishes().setImageResource(cardInfEntityList.get(position).getFishPath());
-        int color = cardInfEntityList.get(position).getCardBackColor();
-        holder.getCardView().setCardBackgroundColor(cardInfEntityList.get(position).getCardBackColor());
-        //   holder.getTv_number().setText(cardInfEntityList.get(position).getFishNum());
-
+        holder.getIv_background().setImageResource(cardInfEntity.getUsrImgPath());
+        holder.getTv_context().setText(cardInfEntity.getContentText());
+        holder.getIv_fishes().setImageResource(R.drawable.heard);
+        holder.getCardView().setCardBackgroundColor(cardInfEntity.getCardBackColor());
+        holder.getTv_number().setText(cardInfEntity.getFishNum()+"");
+        holder.getTv_number().setTextColor(mContext.getResources().getColor(R.color.myBlue));
+        holder.getTv_comments().setText(cardInfEntity.getCommentsNum()+"");
+        holder.getTv_comments().setTextColor(mContext.getResources().getColor(R.color.myRed));
+        holder.getIv_commentImg().setImageResource(R.drawable.comment);
     }
 
     @Override

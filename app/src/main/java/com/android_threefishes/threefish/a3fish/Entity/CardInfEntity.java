@@ -13,14 +13,27 @@ public class CardInfEntity {
     private int fishNum;
     private double imageScale;
     private int cardBackColor;
+    private int commentsNum;
 
-    public CardInfEntity(int usrImgPath, String contentText, int fishPath, int fishNum, double imageScale, int cardBackColor) {
+    public CardInfEntity(String contentText, int usrImgPath, int fishNum, double imageScale, int commentsNum) {
+        this.contentText = contentText;
+        this.usrImgPath = usrImgPath;
+        this.fishNum = fishNum;
+        this.imageScale = imageScale;
+        this.commentsNum = commentsNum;
+    }
+
+    public CardInfEntity(int usrImgPath, String contentText, int fishNum, double imageScale, int cardBackColor, int commentsNum) {
         this.usrImgPath = usrImgPath;
         this.contentText = contentText;
-        this.fishPath = fishPath;
         this.fishNum = fishNum;
         this.imageScale = imageScale;
         this.cardBackColor = cardBackColor;
+        this.commentsNum = commentsNum;
+    }
+
+    public int getCommentsNum() {
+        return commentsNum;
     }
 
     public int getCardBackColor() {
