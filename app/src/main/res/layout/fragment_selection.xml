@@ -4,13 +4,26 @@
     android:layout_height="match_parent"
     tools:context="com.android_threefishes.threefish.a3fish.Fragment.Selection_Fragment">
 
-
-    <com.view.jameson.library.SpeedRecyclerView
-        android:id="@+id/recyclerView_selected"
+    <LinearLayout
+        android:orientation="vertical"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-      android:layout_marginBottom="35dp">
+        android:background="@drawable/listen05">
 
-    </com.view.jameson.library.SpeedRecyclerView>
+        <com.view.jameson.library.SpeedRecyclerView
+            android:id="@+id/recyclerView_selected"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            >
+        </com.view.jameson.library.SpeedRecyclerView>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="25dp"
+            android:text="3月27号"
+            android:background="#333"
+            android:gravity="center_horizontal"/>
+    </LinearLayout>
+
 
 </FrameLayout>

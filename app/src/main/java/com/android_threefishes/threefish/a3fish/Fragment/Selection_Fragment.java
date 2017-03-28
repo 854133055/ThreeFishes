@@ -29,6 +29,7 @@ public class Selection_Fragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_selection, container, false);
         RecyclerView mRecycle = (RecyclerView) view.findViewById(R.id.recyclerView_selected);
+
         LinearLayoutManager manager = new LinearLayoutManager(getActivity(), LinearLayoutManager.HORIZONTAL, false);
         mRecycle.setLayoutManager(manager);
         init();

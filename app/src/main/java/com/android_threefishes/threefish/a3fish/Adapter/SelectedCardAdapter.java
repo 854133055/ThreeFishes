@@ -34,7 +34,7 @@ public class SelectedCardAdapter extends RecyclerView.Adapter<SelectedCardAdapte
         View itemView = LayoutInflater.from(parent.getContext()).inflate(R.layout.frag_selection_carditem, parent, false);
         int width = mCardAdapterHelper.onCreateViewHolder(parent, itemView);
         ViewHolder holder = new ViewHolder(itemView);
-        holder.getmImageView().getLayoutParams().height = (int)(width * 0.9);
+        holder.getmImageView().getLayoutParams().height = (int)(width * 1.0);
         return holder;
     }
 /**/
@@ -46,9 +46,6 @@ public class SelectedCardAdapter extends RecyclerView.Adapter<SelectedCardAdapte
         holder.mTextView.setText(mEntity.getContent());
         holder.mTextView1.setText(mEntity.getFlags());
         holder.mIV_heart.setImageResource(R.drawable.heardbig);
-      /*  if(mEntity.getShow() == true){
-            holder.mIV_listenflag.setImageResource(R.drawable.ic_play_dp);
-        }*/
         holder.mCardView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {

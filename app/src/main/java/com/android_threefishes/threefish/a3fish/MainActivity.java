@@ -60,6 +60,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
 
     private void initView(){
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar_main);
+        toolbar.setTitle("");
         setSupportActionBar(toolbar);
         materialMenuDrawable = new MaterialMenuDrawable(this, Color.BLACK, MaterialMenuDrawable.Stroke.THIN);
         materialMenuDrawable.setIconState(MaterialMenuDrawable.IconState.BURGER);
