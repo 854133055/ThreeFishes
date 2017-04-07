@@ -10,17 +10,16 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.android_threefishes.threefish.a3fish.Entity.CardInfEntity;
-import com.android_threefishes.threefish.a3fish.MyViewHolder;
 import com.android_threefishes.threefish.a3fish.R;
 import com.android_threefishes.threefish.a3fish.Untils;
 
 import java.util.List;
 
 /**
- * Describe: Recycle Adapter
+ * Describe:  发现 Recycle Adapter
  */
 
-public class MyRecyAdaper extends RecyclerView.Adapter<MyViewHolder> {
+public class MyRecyAdaper extends RecyclerView.Adapter<MyViewHolder> implements View.OnClickListener{
 
     private List<CardInfEntity> cardInfEntityList;
     private Context mContext;
@@ -33,13 +32,14 @@ public class MyRecyAdaper extends RecyclerView.Adapter<MyViewHolder> {
         this.cardInfEntityList = cardInfEntityList;
         this.mContext = mContext;
         //获取屏幕宽度,并计算出每栏的宽度
-        this.width = Untils.getSrceenWidth(mContext) / 2 - 14;
+        this.width = Untils.getSrceenWidth(mContext) / 2 - 10;//14
     }
 
     @Override
     public MyViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         View view = LayoutInflater.from(mContext).inflate(R.layout.recycle_carditem, parent, false);
         MyViewHolder myViewHolder = new MyViewHolder(view);
+        view.setOnClickListener(this);
         return myViewHolder;
     }
 
@@ -47,27 +47,27 @@ public class MyRecyAdaper extends RecyclerView.Adapter<MyViewHolder> {
     public void onBindViewHolder(MyViewHolder holder, int position) {
         cardInfEntity = cardInfEntityList.get(position);
         imageHeigh = (int) (cardInfEntity.getImageScale() * width +0.5f);
-        cardViewHeigh = imageHeigh + 3*getDeviceLineHeigh(holder,cardInfEntity.getContentText(),width) + getTextViewHeigh(holder, cardInfEntity.getContentText(), width);
+     //   cardViewHeigh = imageHeigh + 3*getDeviceLineHeigh(holder,cardInfEntity.getContentText(),width) + getTextViewHeigh(holder, cardInfEntity.getContentText(), width);
 
-        /*      Log.e("get date", "width: " + width + " imageHeigh: " + imageHeigh + " TextViewheigh: " + getTextViewHeigh(holder, cardInfEntityList.get(position).getContentText(),width) + " allHeigh: " + allHeigh);
-        Log.e("textviewline", getTextViewLines(holder, cardInfEntityList.get(position).getContentText(), width)+"");*/
-        //重新设置itemview的布局长宽
+
+        //重新设置itemview的布局宽,不用设置长
         ViewGroup.LayoutParams mLayoutParams = holder.itemView.getLayoutParams();
         mLayoutParams.width = width;
-        mLayoutParams.height = cardViewHeigh;
 
 
         holder.itemView.setLayoutParams(mLayoutParams);
-
-        holder.getIv_background().setImageResource(cardInfEntity.getUsrImgPath());
+        holder.itemView.setTag(position);
+        holder.getIv_background().setImageResource(cardInfEntity.getImgSmallbackPath());
+       // Glide.with(mContext).load(cardInfEntity.getImgSmallbackPath()).into(holder.getIv_background());
         holder.getTv_context().setText(cardInfEntity.getContentText());
-        holder.getIv_fishes().setImageResource(R.drawable.heard);
+        holder.getIv_fishes().setImageResource(R.drawable.heard3);
         holder.getCardView().setCardBackgroundColor(cardInfEntity.getCardBackColor());
         holder.getTv_number().setText(cardInfEntity.getFishNum()+"");
         holder.getTv_number().setTextColor(mContext.getResources().getColor(R.color.myBlue));
         holder.getTv_comments().setText(cardInfEntity.getCommentsNum()+"");
         holder.getTv_comments().setTextColor(mContext.getResources().getColor(R.color.myRed));
         holder.getIv_commentImg().setImageResource(R.drawable.comment);
+
     }
 
     @Override
@@ -75,8 +75,26 @@ public class MyRecyAdaper extends RecyclerView.Adapter<MyViewHolder> {
         return cardInfEntityList.size();
     }
 
+    @Override
+    public void onClick(View v) {
+        if (onRecycleItemlistener != null){
+            onRecycleItemlistener.onItemClick(v,(int)v.getTag());
+        }
+    }
+
+    private OnRecycleItemlistener onRecycleItemlistener = null;
+
+    public void setOnItemClickListener(OnRecycleItemlistener listener) {
+        this.onRecycleItemlistener = listener;
+    }
+
+
+    public interface OnRecycleItemlistener{
+        void onItemClick(View view, int postion);
+    }
+
     /**
-     * get TextView-content Heigh
+     * get TextView-other_content Heigh
      * @param holder
      * @param content
      * @param width

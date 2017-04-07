@@ -6,7 +6,7 @@ import android.view.View;
 
 /**
  * Created by mml on 17-3-24.
- * Describe:
+ * Describe: 发现RecycleView分割线
  */
 
 public class SpacesItemDecoration extends RecyclerView.ItemDecoration {

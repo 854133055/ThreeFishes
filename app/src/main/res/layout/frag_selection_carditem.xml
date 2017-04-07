@@ -1,5 +1,4 @@
 <?xml version="1.0" encoding="utf-8"?>
-
 <android.support.v7.widget.CardView
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:android="http://schemas.android.com/apk/res/android"
@@ -9,7 +8,8 @@
     app:cardCornerRadius="8dp"
     app:cardElevation="6dp"
     app:cardMaxElevation="12dp"
-    app:cardUseCompatPadding="true">
+    app:cardUseCompatPadding="true"
+    >
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -30,7 +30,7 @@
             android:paddingTop="16.32dp"
             android:paddingLeft="18.14dp"
             android:paddingRight="18.14dp"
-            android:paddingBottom="9.07dp"
+            android:paddingBottom="4dp"
             android:textSize="13.7sp"
             android:textColor="#333333"
             android:text="当提起小竹桶时,清澈的水撒向远方,撒出记忆的藏宝图,我站在板凳上,看时针指引的正确方向,踏着水流向前方探险"/>

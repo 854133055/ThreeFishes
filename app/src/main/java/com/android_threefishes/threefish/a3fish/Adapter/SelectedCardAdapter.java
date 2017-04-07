@@ -1,5 +1,6 @@
 package com.android_threefishes.threefish.a3fish.Adapter;
 
+import android.content.Context;
 import android.support.v7.widget.CardView;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
@@ -8,8 +9,9 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import com.android_threefishes.threefish.a3fish.Entity.SelectedItemEntity;
+import com.android_threefishes.threefish.a3fish.Entity.CardInfEntity;
 import com.android_threefishes.threefish.a3fish.R;
+import com.bumptech.glide.Glide;
 import com.view.jameson.library.CardAdapterHelper;
 
 import java.util.ArrayList;
@@ -17,15 +19,17 @@ import java.util.List;
 
 
 /**
- * Created by jameson on 8/30/16.
+ * 精选 RecycleView Adapter
  */
-public class SelectedCardAdapter extends RecyclerView.Adapter<SelectedCardAdapter.ViewHolder> {
-    private List<SelectedItemEntity> mList = new ArrayList<>();
-    private SelectedItemEntity mEntity;
+public class SelectedCardAdapter extends RecyclerView.Adapter<SelectedCardAdapter.ViewHolder> implements View.OnClickListener{
+    private List<CardInfEntity> mList = new ArrayList<>();
+    private CardInfEntity mEntity;
+    private Context mContext;
 
     private CardAdapterHelper mCardAdapterHelper = new CardAdapterHelper();
 
-    public SelectedCardAdapter(List<SelectedItemEntity> mList) {
+    public SelectedCardAdapter(Context mContext,List<CardInfEntity> mList) {
+        this.mContext = mContext;
         this.mList = mList;
     }
 
@@ -33,30 +37,47 @@ public class SelectedCardAdapter extends RecyclerView.Adapter<SelectedCardAdapte
     public ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         View itemView = LayoutInflater.from(parent.getContext()).inflate(R.layout.frag_selection_carditem, parent, false);
         int width = mCardAdapterHelper.onCreateViewHolder(parent, itemView);
+        itemView.setOnClickListener(this);
         ViewHolder holder = new ViewHolder(itemView);
-        holder.getmImageView().getLayoutParams().height = (int)(width * 1.0);
+        holder.getmImageView().getLayoutParams().height = (int)(width * 0.9);//1.0
         return holder;
     }
-/**/
+
+
     @Override
     public void onBindViewHolder(final ViewHolder holder, final int position) {
         mCardAdapterHelper.onBindViewHolder(holder.itemView, position, getItemCount());
         mEntity = mList.get(position);
-        holder.mImageView.setImageResource(mEntity.getImagePath());
-        holder.mTextView.setText(mEntity.getContent());
+        holder.itemView.setTag(position);
+     //   holder.mImageView.setImageResource(mEntity.getImgSmallbackPath());
+        Glide.with(mContext).load(mEntity.getImgSmallbackPath()).into(holder.mImageView);
+        holder.mTextView.setText(mEntity.getContentText());
         holder.mTextView1.setText(mEntity.getFlags());
-        holder.mIV_heart.setImageResource(R.drawable.heardbig);
-        holder.mCardView.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-
-            }
-        });
+     //   holder.mIV_heart.setImageResource(R.drawable.heardbig);
+        Glide.with(mContext).load(R.drawable.heardbig).into(holder.mIV_heart);
     }
 
     @Override
     public int getItemCount() {
         return mList.size();
+    }
+
+    @Override
+    public void onClick(View v) {
+        if (onRecycleItemlistener != null){
+            onRecycleItemlistener.onItemClick(v,(int)(v.getTag()));
+        }
+    }
+
+    private OnRecycleItemlistener onRecycleItemlistener = null;
+
+    public void setOnItemClickListener(OnRecycleItemlistener listener) {
+        this.onRecycleItemlistener = listener;
+    }
+
+
+    public static interface OnRecycleItemlistener{
+        void onItemClick(View view, int postion);
     }
 
 

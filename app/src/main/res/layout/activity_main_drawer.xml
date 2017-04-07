@@ -4,6 +4,7 @@
     android:orientation="vertical"
     android:layout_height="match_parent"
     android:layout_gravity="start"
+    android:clickable="true"
     android:background="#dddddd">
 
 
@@ -41,16 +42,21 @@
         <TextView
             android:id="@+id/tv_artical"
             style="@style/drawerSuperTextView"
+            android:background="@drawable/ic_ripple"
             android:text="文摘" />
 
         <TextView
             android:id="@+id/tv_song"
             style="@style/drawerSuperTextView"
+
+            android:background="@drawable/ic_ripple"
             android:text="诗歌" />
 
         <TextView
             android:id="@+id/tv_origin"
             style="@style/drawerSuperTextView"
+
+            android:background="@drawable/ic_ripple"
             android:text="原创"
             />
 
@@ -73,12 +79,14 @@
             android:id="@+id/tv_newC"
             style="@style/drawerSuperTextView"
             android:text="新潮"
+            android:background="@drawable/ic_ripple"
             />
 
         <TextView
             android:id="@+id/tv_tradition"
             style="@style/drawerSuperTextView"
             android:text="传统"
+            android:background="@drawable/ic_ripple"
             />
         <View
             android:background="@color/colorState"
@@ -98,15 +106,15 @@
         <TextView
             android:id="@+id/tv_time"
             style="@style/drawerSuperTextView"
+            android:background="@drawable/ic_ripple"
             android:text="时间" />
 
         <TextView
             android:id="@+id/tv_space"
             style="@style/drawerSuperTextView"
+            android:background="@drawable/ic_ripple"
             android:text="空间" />
 
     </LinearLayout>
-
-
 
 </LinearLayout>

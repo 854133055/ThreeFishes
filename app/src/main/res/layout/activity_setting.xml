@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_setting"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="com.android_threefishes.threefish.a3fish.Setting_Activity">
+
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/toolbar_main_settings"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/colorTheme"
+        android:weightSum="1">
+
+        <TextView
+            android:id="@+id/title_text_listen"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:textColor="@android:color/black"
+            android:textSize="20sp"
+            android:text="设置"/>
+
+    </android.support.v7.widget.Toolbar>
+
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/black2"
+        android:scrollbars="none">
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/tv_my_myAcount"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/my_listItemHeight"
+                android:layout_marginTop="@dimen/my_listitem_IntervalHei"
+                android:text="消息推送"
+                style="@style/TxtTitle"
+                />
+            <View
+                android:background="@color/black2"
+                android:layout_width="match_parent"
+                android:layout_height="1.0dip" />
+
+
+            <TextView
+                android:id="@+id/tv_my_collect"
+                android:text="清除缓存"
+                android:layout_marginTop="@dimen/my_listitem_IntervalHei"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/my_listItemHeight"
+                style="@style/TxtTitle"
+                />
+            <View
+                android:background="@color/black2"
+                android:layout_width="match_parent"
+                android:layout_height="1.0dip" />
+
+
+            <TextView
+                android:id="@+id/tv_my_settings"
+                style="@style/TxtTitle"
+                android:layout_marginTop="@dimen/my_listitem_IntervalHei"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/my_listItemHeight"
+                android:text="版本更新" />
+            <View
+                android:background="@color/black2"
+                android:layout_width="fill_parent"
+                android:layout_height="1.0dip" />
+
+
+            <TextView
+                android:id="@+id/tv_my_complain"
+                style="@style/TxtTitle"
+                android:layout_width="fill_parent"
+                android:layout_height="48.25dp"
+                android:text="关于我们" />
+            <View
+                android:background="@color/black2"
+                android:layout_width="fill_parent"
+                android:layout_height="1.0dip" />
+
+            <TextView
+                android:id="@+id/txt_about"
+                style="@style/TxtTitle"
+                android:layout_width="fill_parent"
+                android:layout_height="@dimen/my_listItemHeight"
+                android:layout_marginTop="@dimen/my_listitem_IntervalHei"
+                android:text="切换账号" />
+            <View
+                android:background="@color/black2"
+                android:layout_width="match_parent"
+                android:layout_height="1.0dip" />
+
+        </LinearLayout>
+    </ScrollView>
+
+</LinearLayout>

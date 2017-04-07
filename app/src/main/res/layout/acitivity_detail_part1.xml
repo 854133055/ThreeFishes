@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <LinearLayout
+        android:id="@+id/seekbar_linear"
+        android:layout_marginTop="5dp"
+        android:orientation="horizontal"
+        android:background="@color/black2"
+        android:layout_marginLeft="5dp"
+        android:layout_marginRight="5dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <ImageView
+            android:id="@+id/detail_iv_begin"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingLeft="5dp"
+            android:paddingTop="3dp"
+            android:paddingBottom="3dp"
+            android:layout_gravity="center"
+            android:src="@drawable/ic_play"/>
+
+        <SeekBar
+            android:layout_gravity="center"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:max="100"
+            android:padding="0dp"
+            android:progress="0"
+            android:id="@+id/seekBar" />
+
+    </LinearLayout>
+
+
+
+
+    <TextView
+        android:id="@+id/detail_tv_context"
+        android:paddingTop="19.95dp"
+        android:paddingLeft="19.95dp"
+        android:paddingRight="19.95dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:lineSpacingMultiplier="1.25"
+        android:text="ddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd"/>
+
+    <RelativeLayout
+        android:id="@+id/relativelayout_part1"
+        android:paddingTop="15dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:id="@+id/detail_tv_flags"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingLeft="18.14dp"
+            android:textColor="#999999"
+            android:textSize="13.7sp"
+            android:text="#  听书  文学  青年文学  校园"/>
+
+        <ImageView
+            android:layout_width="22dp"
+            android:layout_height="27dp"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="14.5dp"
+            android:src="@drawable/heardbig"
+            android:id="@+id/detail_iv_heartbig" />
+
+    </RelativeLayout>
+
+-->
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_marginTop="5dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:background="@color/colorState"/>
+
+    <TextView
+        android:id="@+id/detail_tv_comments"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:paddingLeft="18.14dp"
+        android:paddingRight="18.14dp"
+        android:paddingTop="5dp"
+        android:paddingBottom="5dp"
+        android:textColor="#999999"
+        android:textSize="13.7sp"
+        android:lineSpacingMultiplier="1.25"
+        android:text="我：哇哇哇，第一次发文章"/>
+
+</LinearLayout>

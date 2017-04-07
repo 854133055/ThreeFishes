@@ -5,6 +5,8 @@
     <color name="colorAccent">#FF4081</color>
     <color name="colorMy">#c5d3de</color>
     <color name="colorState">#c5d3de</color>
+    <color name="colorTheme">#ef8478</color>
+    <color name="colorThemeTab">#ef8478</color>
     <color name="white">#ffffff</color>
     <color name="black2">#f2f2f2</color>
     <color name="textBackColor01">#8EE5EE</color>

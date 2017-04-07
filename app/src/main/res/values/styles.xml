@@ -1,11 +1,36 @@
 <resources>
 
     <!-- Base application theme. -->
+
     <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorTheme</item>
+        <item name="colorAccent">@color/colorAccent</item>
+    </style>
+
+    <style name="AddTheme" parent="Theme.AppCompat.Light.NoActionBar">
         <!-- Customize your theme here. -->
         <item name="colorPrimary">@color/colorPrimary</item>
         <item name="colorPrimaryDark">@color/colorState</item>
         <item name="colorAccent">@color/colorAccent</item>
+    </style>
+
+
+
+    <style name="Theme.ActivityDialogStyle" parent="Theme.AppCompat.Light.NoActionBar">
+        <item name="android:windowIsTranslucent">true</item>
+        <item name="android:windowBackground">@color/white</item>
+        <item name="android:backgroundDimEnabled">true</item>
+        <item name="android:windowContentOverlay">@null</item>
+        <item name="android:windowCloseOnTouchOutside">false</item>
+        <item name="android:windowIsFloating">true</item>    //dialog会自适应
+    </style>
+
+    <style name="Widget.MaterialProgressBar.ProgressBar.Horizontal" parent="android:Widget.ProgressBar.Horizontal">
+        <item name="android:indeterminateDrawable">@null</item>
+        <item name="android:minHeight">16dp</item>
+        <item name="android:maxHeight">16dp</item>
     </style>
 
 
@@ -47,9 +72,10 @@
     </style>
 
     <style name="drawerSuperTextView">
-        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:onClick">mClick</item>
         <item name="android:layout_height">38.82dp</item>
-        <item name="android:layout_marginLeft">50.7dp</item>
+        <item name="android:paddingLeft">50.7dp</item>
         <item name="android:textColor">@color/my333333</item>
         <item name="android:gravity">center_vertical</item>
         <item name="android:textSize">16sp</item>

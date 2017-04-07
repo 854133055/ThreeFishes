@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_listen"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+
+    tools:context="com.android_threefishes.threefish.a3fish.Other_Activity">
+
+
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/toolbar_main_other"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/colorTheme"
+        android:weightSum="1">
+
+        <TextView
+            android:id="@+id/title_text_listen"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:textColor="@android:color/black"
+            android:textSize="20sp"
+            android:text="三条鱼"/>
+
+    </android.support.v7.widget.Toolbar>
+
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/recycleView_OtherAcitivity"
+        android:layout_width="match_parent"
+        android:layout_below="@id/toolbar_main_other"
+        android:scrollbars="none"
+        android:background="@drawable/gg"
+        android:layout_height="match_parent"/>
+
+</RelativeLayout>

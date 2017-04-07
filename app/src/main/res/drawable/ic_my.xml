@@ -5,13 +5,13 @@
     android:viewportHeight="70.94">
 
     <path
-        android:strokeColor="#778cb0"
+        android:strokeColor="@color/colorThemeTab"
         android:strokeWidth="3"
         android:strokeMiterLimit="10"
         android:strokeLineCap="round"
         android:pathData="M 33.87 1.5 C 42.5519162673 1.5 49.59 8.53808373266 49.59 17.22 C 49.59 25.9019162673 42.5519162673 32.94 33.87 32.94 C 25.1880837327 32.94 18.15 25.9019162673 18.15 17.22 C 18.15 8.53808373266 25.1880837327 1.5 33.87 1.5 Z" />
     <path
-        android:strokeColor="#778cb0"
+        android:strokeColor="@color/colorThemeTab"
         android:strokeWidth="3"
         android:strokeMiterLimit="10"
         android:strokeLineCap="round"

@@ -5,15 +5,15 @@
     android:viewportHeight="71">
 
     <path
-        android:fillColor="#778cb0"
-        android:strokeColor="#778cb0"
+        android:fillColor="@color/colorThemeTab"
+        android:strokeColor="@color/colorThemeTab"
         android:strokeWidth="3"
         android:strokeMiterLimit="10"
         android:strokeLineCap="round"
         android:pathData="M 33.87 1.5 C 42.5519162673 1.5 49.59 8.54703803766 49.59 17.24 C 49.59 25.9329619623 42.5519162673 32.98 33.87 32.98 C 25.1880837327 32.98 18.15 25.9329619623 18.15 17.24 C 18.15 8.54703803766 25.1880837327 1.5 33.87 1.5 Z" />
     <path
-        android:fillColor="#778cb0"
-        android:strokeColor="#778cb0"
+        android:fillColor="@color/colorThemeTab"
+        android:strokeColor="@color/colorThemeTab"
         android:strokeWidth="3"
         android:strokeMiterLimit="10"
         android:strokeLineCap="round"

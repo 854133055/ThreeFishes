@@ -10,13 +10,13 @@ public class SelectedItemEntity {
     private String content;
     private String flags;
     private int imageHeartPath;
-    private Boolean isShow;
+
 
     public SelectedItemEntity(int imagePath, String flags, String content, Boolean isShow) {
         this.imagePath = imagePath;
         this.flags = flags;
         this.content = content;
-        this.isShow = isShow;
+
     }
 
     public int getImagePath() {
@@ -51,11 +51,5 @@ public class SelectedItemEntity {
         this.imageHeartPath = imageHeartPath;
     }
 
-    public Boolean getShow() {
-        return isShow;
-    }
 
-    public void setShow(Boolean show) {
-        isShow = show;
-    }
 }

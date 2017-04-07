@@ -1,10 +1,9 @@
 package com.android_threefishes.threefish.a3fish;
 
 import android.app.Fragment;
+import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
-import android.support.annotation.NonNull;
-import android.support.design.widget.NavigationView;
 import android.support.design.widget.TabLayout;
 import android.support.v4.view.GravityCompat;
 import android.support.v4.view.ViewPager;
@@ -13,52 +12,42 @@ import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.util.Log;
-import android.view.MenuItem;
+import android.view.Menu;
 import android.view.View;
 import android.widget.ImageView;
+import android.widget.TextView;
 
 import com.android_threefishes.threefish.a3fish.Adapter.Home_ViewpagerAdapter;
-import com.android_threefishes.threefish.a3fish.Fragment.Find_Fragment;
-import com.android_threefishes.threefish.a3fish.Fragment.My_Fragment;
-import com.android_threefishes.threefish.a3fish.Fragment.NavigFragment;
-import com.android_threefishes.threefish.a3fish.Fragment.Selection_Fragment;
+import com.android_threefishes.threefish.a3fish.Fragment.Home_Find_Fragment;
+import com.android_threefishes.threefish.a3fish.Fragment.Home_My_Fragment;
+import com.android_threefishes.threefish.a3fish.Fragment.Home_Selection_Fragment;
 import com.balysv.materialmenu.MaterialMenuDrawable;
 
 import java.util.ArrayList;
 import java.util.List;
 
-public class MainActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
+
+public class MainActivity extends AppCompatActivity  {
 
     private TabLayout tabLayout;
     private ViewPager viewPager;
     private Home_ViewpagerAdapter mViewPagerAdapter;
     private List<Fragment> fragmentList;
-    private Find_Fragment findFragment;
-    private NavigFragment navFragment;
+    private Home_Find_Fragment findFragment;
     private TabLayout.Tab myTab;
     private MaterialMenuDrawable materialMenuDrawable;
+    private TextView tv_main_titile;
+    private  TextView tv_drawer_item;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-
         initView();
-       /* findFragment.setCallback_find(new Find_Fragment.Callback_Find() {
-            @Override
-            public void findFraOnclick(int num) {
-                fragmentCallback(num);
-            }
-        });
-        navFragment.setCallback_Navig(new NavigFragment.Callback_Navig() {
-            @Override
-            public void navigFraOnclick(int num) {
-                fragmentCallback(num);
-            }
-        });*/
     }
 
     private void initView(){
+        tv_main_titile = (TextView) findViewById(R.id.title_text);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar_main);
         toolbar.setTitle("");
         setSupportActionBar(toolbar);
@@ -76,7 +65,74 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         viewPager.setAdapter(mViewPagerAdapter);
         tabLayout.setupWithViewPager(viewPager);
         initTabLayout(functionKeysName(), Default_functionKeysIcon(),Selected_functionKeysIcon());
+    }
 
+    private void initDrawlayout(){
+        tv_drawer_item = (TextView) findViewById(R.id.tv_artical);
+        tv_drawer_item = (TextView) findViewById(R.id.tv_song);
+        tv_drawer_item = (TextView) findViewById(R.id.tv_newC);
+        tv_drawer_item = (TextView) findViewById(R.id.tv_origin);
+        tv_drawer_item = (TextView) findViewById(R.id.tv_tradition);
+        tv_drawer_item = (TextView) findViewById(R.id.tv_time);
+        tv_drawer_item = (TextView) findViewById(R.id.tv_space);
+    }
+
+    public void mClick(View view){
+        Intent intent;
+        switch (view.getId()) {
+           case R.id.tv_artical:
+               intent = new Intent(this, Other_Activity.class);
+               intent.putExtra("title","聆听·文摘 1");
+               startActivity(intent);
+                break;
+
+           case R.id.tv_song:
+               intent = new Intent(this, Other_Activity.class);
+               intent.putExtra("title","聆听·诗歌 2");
+               startActivity(intent);
+               break;
+
+            case R.id.tv_origin:
+                intent = new Intent(this, Other_Activity.class);
+                intent.putExtra("title","聆听·原创 3");
+                startActivity(intent);
+                break;
+
+            case R.id.tv_newC:
+                intent = new Intent(this, Other_Activity.class);
+                intent.putExtra("title","美食·新潮 4");
+                startActivity(intent);
+                break;
+
+            case R.id.tv_tradition:
+                intent = new Intent(this, Other_Activity.class);
+                intent.putExtra("title","美食·传统 5");
+                startActivity(intent);
+                break;
+
+            case R.id.tv_time:
+                intent = new Intent(this, Other_Activity.class);
+                intent.putExtra("title","旅行·时间 6");
+                startActivity(intent);
+                break;
+
+            case R.id.tv_space:
+                intent = new Intent(this, Other_Activity.class);
+                intent.putExtra("title","旅行·空间 7");
+                startActivity(intent);
+                break;
+        }
+        DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
+        drawer.closeDrawer(GravityCompat.START);
+    }
+
+
+
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        getMenuInflater().inflate(R.menu.searchbtn,menu);
+        return super.onCreateOptionsMenu(menu);
     }
 
     @Override
@@ -87,29 +143,8 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         } else {
             super.onBackPressed();
         }
-    }
-/*
-    *//**
-     * find_fragment和navigFragment回调Activity,来通知viewpager更新fragment
-     * @param num 特征值
-     *//*
-    private void fragmentCallback(int num){
-        switch (num) {
-            case 0:
-                fragmentFlagArray[0] = true;
-                fragmentList.set(0, findFragment);
-                mViewPagerAdapter.notifyDataSetChanged();
-                initTabLayout(functionKeysName(), Default_functionKeysIcon(),Selected_functionKeysIcon());
-                break;
-            case 1:
-                fragmentFlagArray[0] = true;
-                fragmentList.set(0, navFragment);
-                mViewPagerAdapter.notifyDataSetChanged();
-                initTabLayout(functionKeysName(), Default_functionKeysIcon(),Selected_functionKeysIcon());
-                break;
-        }
-    }*/
 
+    }
 
 
     /**
@@ -145,12 +180,15 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                 switch (num){
                     case 0:
                         iv.setImageResource(R.drawable.ic_findpressed);
+                        tv_main_titile.setText("三条鱼");
                         break;
                     case 1:
                         iv.setImageResource(R.drawable.ic_selected_pressed);
+                        tv_main_titile.setText("精选");
                         break;
                     case 2:
                         iv.setImageResource(R.drawable.ic_my_pressed);
+                        tv_main_titile.setText("我的");
                         break;
                 }
 
@@ -162,12 +200,15 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                 switch (num){
                     case 0:
                         iv.setImageResource(R.drawable.ic_find);
+                        tv_main_titile.setText("三条鱼");
                         break;
                     case 1:
                         iv.setImageResource(R.drawable.ic_selected);
+                        tv_main_titile.setText("精选");
                         break;
                     case 2:
                         iv.setImageResource(R.drawable.ic_my);
+                        tv_main_titile.setText("我的");
                         break;
                 }
 
@@ -185,22 +226,13 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         });
     }
 
-    private void resetTab(){
-        Log.e("here", "reset it");
-        tabLayout.getTabAt(0).setIcon(R.drawable.ic_find);
-        tabLayout.getTabAt(1).setIcon(R.drawable.ic_selected);
-        tabLayout.getTabAt(2).setIcon(R.drawable.ic_my);
-    }
-
-
 
     private List<Fragment> initFragment(){
-        fragmentList = new ArrayList<Fragment>();
-        findFragment = new Find_Fragment();
-        navFragment = new NavigFragment();
+        fragmentList = new ArrayList<>();
+        findFragment = new Home_Find_Fragment();
         fragmentList.add(findFragment);
-        fragmentList.add(new Selection_Fragment());
-        fragmentList.add(new My_Fragment());
+        fragmentList.add(new Home_Selection_Fragment());
+        fragmentList.add(new Home_My_Fragment());
         return fragmentList;
     }
 
@@ -232,8 +264,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                 R.drawable.ic_my_pressed};
     }
 
-    @Override
-    public boolean onNavigationItemSelected(@NonNull MenuItem item) {
-        return false;
-    }
+
+
+
 }

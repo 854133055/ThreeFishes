@@ -5,8 +5,8 @@
     android:viewportHeight="75">
 
     <path
-        android:fillColor="#778cb0"
-        android:strokeColor="#778cb0"
+        android:fillColor="@color/colorThemeTab"
+        android:strokeColor="@color/colorThemeTab"
         android:strokeWidth="3"
         android:strokeMiterLimit="10"
         android:pathData="M1.58,47.65a57.24,57.24,0,0,1,21-29.92C34.14,9.16,47.77,4.5,55.16,1.56a.74 .74
@@ -14,8 +14,8 @@
 .72 ,0,0,1-.44,1.26c-4.16 .46
 -16.94-.91-25.69-5.33C6.18,57.82,1.58,47.65,1.58,47.65Z" />
     <path
-        android:fillColor="#778cb0"
-        android:strokeColor="#778cb0"
+        android:fillColor="@color/colorThemeTab"
+        android:strokeColor="@color/colorThemeTab"
         android:strokeWidth="3"
         android:strokeMiterLimit="10"
         android:pathData="M42.1,44a25.33,25.33,0,0,1,9.18-15c4.89-3.8,11.31-5.23,14.63-5.75a.75 .75
