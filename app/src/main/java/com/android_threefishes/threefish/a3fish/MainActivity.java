@@ -155,6 +155,8 @@ public class MainActivity extends AppCompatActivity  {
      */
     public void initTabLayout(String[] nameArray,final int[] D_iconArray,final int C_iconArray[]){
 
+
+
         for (int i = 0;i < tabLayout.getTabCount();i++){
             if(tabLayout.getTabCount() != 0){
                 myTab = tabLayout.getTabAt(i);
@@ -162,7 +164,7 @@ public class MainActivity extends AppCompatActivity  {
                 myTab.setCustomView(mViewPagerAdapter.getTabView(i));
             }
         }
-
+        viewPager.setCurrentItem(1);
 
         tabLayout.setOnTabSelectedListener(new TabLayout.OnTabSelectedListener() {
 
@@ -248,8 +250,8 @@ public class MainActivity extends AppCompatActivity  {
      */
     private int[] Default_functionKeysIcon(){
         return new int[]{
-                R.drawable.ic_findpressed,
-                R.drawable.ic_selected,
+                R.drawable.ic_find,
+                R.drawable.ic_selected_pressed,
                 R.drawable.ic_my
         };
     }

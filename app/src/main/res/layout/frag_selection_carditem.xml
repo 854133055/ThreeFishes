@@ -19,7 +19,7 @@
         <ImageView
             android:id="@+id/imageView"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_height="400dp"
             android:scaleType="centerCrop"
             android:src="@drawable/fishpicture"/>
 
@@ -49,11 +49,11 @@
                 android:text="#  听书  文学  青年文学  校园"/>
 
             <ImageView
-                android:layout_width="22dp"
-                android:layout_height="27dp"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
                 android:layout_alignParentRight="true"
                 android:layout_marginRight="14.5dp"
-                android:src="@drawable/heardbig"
+                android:src="@drawable/heard22"
                 android:id="@+id/selected_iv_heartbig" />
 
         </RelativeLayout>

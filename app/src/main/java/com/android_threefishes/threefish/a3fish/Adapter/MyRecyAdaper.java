@@ -12,6 +12,7 @@ import android.view.ViewGroup;
 import com.android_threefishes.threefish.a3fish.Entity.CardInfEntity;
 import com.android_threefishes.threefish.a3fish.R;
 import com.android_threefishes.threefish.a3fish.Untils;
+import com.bumptech.glide.Glide;
 
 import java.util.List;
 
@@ -57,8 +58,8 @@ public class MyRecyAdaper extends RecyclerView.Adapter<MyViewHolder> implements 
 
         holder.itemView.setLayoutParams(mLayoutParams);
         holder.itemView.setTag(position);
-        holder.getIv_background().setImageResource(cardInfEntity.getImgSmallbackPath());
-       // Glide.with(mContext).load(cardInfEntity.getImgSmallbackPath()).into(holder.getIv_background());
+      //  holder.getIv_background().setImageResource(cardInfEntity.getImgSmallbackPath());
+        Glide.with(mContext).load(cardInfEntity.getImgSmallbackPath()).into(holder.getIv_background());
         holder.getTv_context().setText(cardInfEntity.getContentText());
         holder.getIv_fishes().setImageResource(R.drawable.heard3);
         holder.getCardView().setCardBackgroundColor(cardInfEntity.getCardBackColor());

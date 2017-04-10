@@ -34,7 +34,7 @@
 
         <TextView
             android:id="@+id/CommentNum"
-            android:text="@string/usrReportNum"
+            android:text="@string/usrCommentNum"
             style="@style/UsrInfTitle"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content" />
@@ -44,7 +44,8 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             style="@style/UsrInfNum"
-            android:text="评论"/>
+            android:text="粉丝"/>
+
     </LinearLayout>
 
     <LinearLayout
@@ -56,7 +57,7 @@
         <TextView
             android:layout_gravity="center_horizontal"
             android:id="@+id/AttentionNum"
-            android:text="@string/usrReportNum"
+            android:text="@string/usrAttentionNum"
             style="@style/UsrInfTitle"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content" />

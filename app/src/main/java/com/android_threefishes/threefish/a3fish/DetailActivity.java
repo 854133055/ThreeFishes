@@ -27,6 +27,7 @@ public class DetailActivity extends AppCompatActivity implements SeekBar.OnSeekB
     private MediaPlayer mediaPlayer;
     private SeekBar bar;
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -52,10 +53,10 @@ public class DetailActivity extends AppCompatActivity implements SeekBar.OnSeekB
                 @Override
                 public void onClick(View v) {
                     if(mediaPlayer.isPlaying()){
-                        iv_begin.setImageResource(R.drawable.ic_play);
+                        iv_begin.setImageResource(R.drawable.ic_play1);
                         mediaPlayer.pause();
                     }else {
-                        iv_begin.setImageResource(R.drawable.ic_pause);
+                        iv_begin.setImageResource(R.drawable.ic_pause1);
                         handler.post(start);
                     }
 
@@ -81,11 +82,13 @@ public class DetailActivity extends AppCompatActivity implements SeekBar.OnSeekB
     };
 
 
-    private void initView(CardInfEntity mCardInfEntity) {
+    private void initView(final CardInfEntity mCardInfEntity) {
 
         LinearLayout seekbar_linear = (LinearLayout) findViewById(R.id.seekbar_linear);
         if(mCardInfEntity.getMusicFilePath() == 0) {
             seekbar_linear.setVisibility(LinearLayout.GONE);
+        }else if(mCardInfEntity.getMusicFilePath() == 1){
+
         }else{
             mediaPlayer = MediaPlayer.create(DetailActivity.this,mCardInfEntity.getMusicFilePath());
         }
@@ -98,12 +101,25 @@ public class DetailActivity extends AppCompatActivity implements SeekBar.OnSeekB
         Glide.with(this).load(mCardInfEntity.getImaDetailbackPath()).into(iv);
       //  iv.setImageResource(mCardInfEntity.getImaDetailbackPath());
 
+        final ImageView iv_artFlag = (ImageView) findViewById(R.id.detial_iv_isFollow);
+        iv_artFlag.setImageResource(mCardInfEntity.getIsfollow());
+        iv_artFlag.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if(mCardInfEntity.getIsfollow() == R.drawable.ic_follower){
+                    mCardInfEntity.setIsfollow(R.drawable.ic_follow);
+                    iv_artFlag.setImageResource(mCardInfEntity.getIsfollow());
+
+                }else {
+                    mCardInfEntity.setIsfollow(R.drawable.ic_follower);
+                    iv_artFlag.setImageResource(mCardInfEntity.getIsfollow());
+
+                }
+            }
+        });
+
         iv = (ImageView) findViewById(R.id.detail_iv_artcleFlags);
         iv.setImageResource(mCardInfEntity.getArtcleFlag());
-      //  Glide.with(this).load(mCardInfEntity.getArtcleFlag()).into(iv);
-
-        iv = (ImageView) findViewById(R.id.detial_iv_isFollow);
-        iv.setImageResource(mCardInfEntity.getIsfollow());
       //  Glide.with(this).load(mCardInfEntity.getIsfollow()).into(iv);
 
         tv = (TextView) findViewById(R.id.detail_tv_usrName);
@@ -115,8 +131,22 @@ public class DetailActivity extends AppCompatActivity implements SeekBar.OnSeekB
         tv = (TextView) findViewById(R.id.detail_tv_flags);
         tv.setText(mCardInfEntity.getFlags());
 
-        iv = (ImageView) findViewById(R.id.detail_iv_heartbig);
-        iv.setImageResource(mCardInfEntity.getIsSupport());
+        final ImageView iv_heard = (ImageView) findViewById(R.id.detail_iv_heartbig);
+        iv_heard.setImageResource(mCardInfEntity.getIsSupport());
+        iv_heard.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if(mCardInfEntity.getIsSupport() == R.drawable.heard11){
+                    mCardInfEntity.setIsSupport(R.drawable.heard22);
+                    iv_heard.setImageResource(mCardInfEntity.getIsSupport());
+                    mCardInfEntity.setCommentsNum(mCardInfEntity.getCommentsNum() + 1);
+                }else {
+                    mCardInfEntity.setIsSupport(R.drawable.heard11);
+                    iv_heard.setImageResource(mCardInfEntity.getIsSupport());
+                    mCardInfEntity.setCommentsNum(mCardInfEntity.getCommentsNum() - 1);
+                }
+            }
+        });
 
         tv = (TextView) findViewById(R.id.detail_tv_comments);
         tv.setText(mCardInfEntity.getComments());

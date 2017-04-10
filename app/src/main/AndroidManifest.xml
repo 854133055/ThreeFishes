@@ -20,7 +20,7 @@
         <activity android:name=".Other_Activity" />
         <activity android:name=".MyAccount_Activity" />
         <activity android:name=".Setting_Activity" />
-        <activity android:name=".Fragment.Add_Activity"></activity>
+        <activity android:name=".Add_Activity"></activity>
     </application>
 
 </manifest>

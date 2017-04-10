@@ -42,7 +42,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="@dimen/my_listItemHeight"
                 android:layout_marginTop="@dimen/my_listitem_IntervalHei"
-                android:text="我的头像"
+                android:text="头像"
                 style="@style/TxtTitle"
                 />
             <View

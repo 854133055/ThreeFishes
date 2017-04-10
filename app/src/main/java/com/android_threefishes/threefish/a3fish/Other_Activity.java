@@ -73,7 +73,7 @@ public class Other_Activity extends AppCompatActivity {
 
     /**
      * 根据drawer点击的item flag 初始化对应数据初始化对应数据
-@param flag
+       @param flag
      */
     private void initDataList(String flag){
         switch (flag) {
@@ -81,22 +81,22 @@ public class Other_Activity extends AppCompatActivity {
                 usrCardObjectlist = Untils.initArticleDate(Other_Activity.this);
                 break;
             case "2":
-                usrCardObjectlist = Untils.initArticleDate(Other_Activity.this);
+                usrCardObjectlist = Untils.initSongDate(Other_Activity.this);
                 break;
             case "3":
                 usrCardObjectlist = Untils.initOriginDate(Other_Activity.this);
                 break;
             case "4":
-                usrCardObjectlist = Untils.initFoodData(Other_Activity.this);
+                usrCardObjectlist = Untils.initNewFoodData(Other_Activity.this);
                 break;
             case "5":
-                usrCardObjectlist = Untils.initFoodData(Other_Activity.this);
+                usrCardObjectlist = Untils.initTradFoodData(Other_Activity.this);
                 break;
             case "6":
-                usrCardObjectlist = Untils.initTraveling(Other_Activity.this);
+                usrCardObjectlist = Untils.initTimeTraveling(Other_Activity.this);
                 break;
             case "7":
-                usrCardObjectlist = Untils.initTraveling(Other_Activity.this);
+                usrCardObjectlist = Untils.initSpaceTraveling(Other_Activity.this);
                 break;
         }
     }

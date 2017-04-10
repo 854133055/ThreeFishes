@@ -17,13 +17,13 @@
 
         <ImageView
             android:id="@+id/detail_iv_begin"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="45dp"
+            android:layout_height="45dp"
             android:paddingLeft="5dp"
             android:paddingTop="3dp"
             android:paddingBottom="3dp"
             android:layout_gravity="center"
-            android:src="@drawable/ic_play"/>
+            android:src="@drawable/ic_play1"/>
 
         <SeekBar
             android:layout_gravity="center"
@@ -37,8 +37,6 @@
     </LinearLayout>
 
 
-
-
     <TextView
         android:id="@+id/detail_tv_context"
         android:paddingTop="19.95dp"
@@ -46,8 +44,10 @@
         android:paddingRight="19.95dp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:lineSpacingMultiplier="1.25"
-        android:text="ddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd"/>
+        android:textSize="15sp"
+        android:textColor="#121212"
+        android:lineSpacingMultiplier="1.5"
+        android:text="ddddddddddddddddddteddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd"/>
 
     <RelativeLayout
         android:id="@+id/relativelayout_part1"
@@ -60,16 +60,19 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:paddingLeft="18.14dp"
+            android:layout_centerVertical="true"
             android:textColor="#999999"
             android:textSize="13.7sp"
             android:text="#  听书  文学  青年文学  校园"/>
 
         <ImageView
-            android:layout_width="22dp"
-            android:layout_height="27dp"
+            android:layout_width="45dp"
+            android:layout_height="45dp"
             android:layout_alignParentRight="true"
             android:layout_marginRight="14.5dp"
-            android:src="@drawable/heardbig"
+            android:scaleType="centerInside"
+            android:src="@drawable/heard11"
+            android:layout_centerVertical="true"
             android:id="@+id/detail_iv_heartbig" />
 
     </RelativeLayout>

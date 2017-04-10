@@ -48,21 +48,12 @@
                 android:layout_marginLeft="65.7dp"/>
 
             <ImageView
-                android:id="@+id/detial_iv_isFollow"
-                android:layout_width="30dp"
-                android:layout_height="30dp"
-                android:layout_marginTop="29dp"
-                android:layout_marginRight="12.7dp"
-                android:src="@drawable/ic_follow"
-                android:layout_alignParentRight="true"/>
-
-            <ImageView
                 android:id="@+id/detail_iv_artcleFlags"
                 android:layout_width="30dp"
                 android:layout_height="30dp"
                 android:layout_marginTop="29dp"
-                android:layout_marginRight="56.28dp"
-                android:src="@drawable/ic_follow"
+                android:layout_marginRight="70.28dp"
+                android:src="@drawable/listen"
                 android:layout_alignParentRight="true"/>
 
             <include
@@ -70,6 +61,16 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 layout="@layout/acitivity_detail_part1" />
+
+            <ImageView
+                android:id="@+id/detial_iv_isFollow"
+                android:layout_width="50dp"
+                android:layout_height="30dp"
+                android:layout_marginRight="12.7dp"
+                android:src="@drawable/ic_follow"
+                android:layout_alignTop="@+id/detail_iv_artcleFlags"
+                android:layout_alignParentEnd="true"
+                android:layout_marginEnd="13dp" />
 
         </RelativeLayout>
 

@@ -28,7 +28,7 @@
                 android:scaleType="fitCenter"
 
                 android:adjustViewBounds="true"
-                android:src="@drawable/meizhi004" />
+                android:src="@drawable/gg" />
 
             <TextView
                 android:id="@+id/tv_context"

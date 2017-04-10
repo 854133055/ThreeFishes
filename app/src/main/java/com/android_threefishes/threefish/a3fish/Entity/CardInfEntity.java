@@ -28,7 +28,6 @@ public class CardInfEntity implements Serializable{
     private int commentsNum;
 
 
-
     public CardInfEntity(int imaDetailbackPath,int imgSmallbackPath, String contentDetailText,String contentText, int fishNum, double imageScale, int cardBackColor, int commentsNum, int usrImagePath, String usrName, int artcleFlag, int isfollow, String flags, String comments, int isSupport) {
         this.imgSmallbackPath = imgSmallbackPath;
         this.contentText = contentText;
@@ -45,6 +44,27 @@ public class CardInfEntity implements Serializable{
         this.flags = flags;
         this.comments = comments;
         this.isSupport = isSupport;
+    }
+
+
+
+    public CardInfEntity(int imaDetailbackPath,int imgSmallbackPath, String contentDetailText,String contentText, int fishNum, double imageScale, int cardBackColor, int commentsNum, int usrImagePath, String usrName, int artcleFlag, int isfollow, String flags, String comments, int isSupport,int musicFilePath) {
+        this.imgSmallbackPath = imgSmallbackPath;
+        this.contentText = contentText;
+        this.contentDetailText = contentDetailText;
+        this.fishNum = fishNum;
+        this.imageScale = imageScale;
+        this.cardBackColor = cardBackColor;
+        this.commentsNum = commentsNum;
+        this.imaDetailbackPath = imaDetailbackPath;
+        this.usrImagePath = usrImagePath;
+        this.usrName = usrName;
+        this.artcleFlag = artcleFlag;
+        this.isfollow = isfollow;
+        this.flags = flags;
+        this.comments = comments;
+        this.isSupport = isSupport;
+        this.musicFilePath = musicFilePath;
     }
 
     public CardInfEntity(int imaDetailbackPath, int imgSmallbackPath, String contentDetailText, String contentText, String flags, String comments, int isSupport, int isfollow, int musicFilePath, int artcleFlag, String usrName, int usrImagePath) {

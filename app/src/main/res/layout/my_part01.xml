@@ -11,7 +11,7 @@
         android:id="@+id/ivback"
         android:layout_width="match_parent"
         android:layout_height="217.68dp"
-        android:src="@drawable/my_background"
+        android:src="@drawable/ic_background"
         android:scaleType="centerCrop"/>
 
     <android.support.v7.widget.CardView
@@ -31,22 +31,15 @@
             android:layout_marginTop="@dimen/usrHeImageMarRightTop"
             android:layout_marginLeft="@dimen/usrHeImageMarRightTop"
             app:civ_border_width="2dp"
-            android:src="@drawable/icon_head"
+            android:src="@drawable/iconhead"
             app:civ_border_color="#f2f2f2f2"/>
 
-        <!--<ImageButton
-            android:layout_width="72.56dp"
-            android:layout_height="72.56dp"
-            android:background="@drawable/icon_head"
-            android:layout_marginTop="14.512dp"
-            android:layout_marginLeft="14.512dp"
-            android:id="@+id/head"
-            />-->
+
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="韦binbin"
+            android:text="梦玥"
             android:layout_marginLeft="97.959dp"
             android:layout_marginTop="21.768dp"
             android:textColor="#333333"
@@ -57,8 +50,9 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Android话题优秀划水者"
+            android:text="故事很长很心酸没有风也没有酒，我却依然讲的泪眼婆娑，像阁楼里的老猫"
             android:layout_marginLeft="97.959dp"
+            android:layout_marginRight="15dp"
             android:layout_marginTop="45.53dp"
             android:textSize="12dp"
             android:textColor="#666666"

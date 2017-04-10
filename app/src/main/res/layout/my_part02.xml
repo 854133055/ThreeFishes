@@ -40,6 +40,18 @@
                 android:layout_width="match_parent"
                 android:layout_height="1.0dip" />
 
+            <TextView
+                android:id="@+id/tv_my_book"
+                android:text="书签"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/my_listItemHeight"
+                style="@style/TxtTitle"
+                />
+            <View
+                android:background="@color/black2"
+                android:layout_width="match_parent"
+                android:layout_height="1.0dip" />
+
 
             <TextView
                 android:id="@+id/tv_my_settings"
